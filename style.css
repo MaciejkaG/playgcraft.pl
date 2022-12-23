@@ -1,0 +1,45 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+h1 {
+    position: absolute;
+    font-size: 5rem;
+    margin-left: 1em;
+    margin-top: 15rem;
+}
+.title {
+    background: url("./title.png");
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    margin-top: -1rem;
+    padding: 0;
+    width: 99vw;
+    height: 70vh;
+}
+.wrapper {
+    width: 98vw;
+    margin-top: 10vh;
+    overflow: auto;
+}
+.p-image {
+    border-radius: 25px;
+    width: 25em;
+}
+.p-left, .p-right {
+    backdrop-filter: brightness(150%);
+    padding: 1rem;
+    border-radius: 25px;
+    width: 50%;
+    margin: 1rem 3rem 0 3rem;
+    font-size: 1.5rem;
+}
+.p-left {
+    float: left;
+    clear: both;
+}
+.p-right {
+    margin-top: 5rem;
+    float: right;
+}
