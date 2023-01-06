@@ -1,4 +1,4 @@
-const ip = "mc.hypixel.net"
+const ip = "mc.playgcraft.pl"
 document.getElementById("ip").innerHTML = `IP: ${ip}<i class="fas fa-copy"></i>`;
 updateStats();
 setInterval(updateStats, 1000);
