@@ -4,10 +4,29 @@ html, body {
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(51, 51, 51);
-    color: white;
+    background: #363636;
+    background: #0f0c29;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: rgb(255, 255, 255);
     padding: 0;
     margin: 0;
+}
+body::-webkit-scrollbar {
+    width: 0.42rem;
+}
+body::-webkit-scrollbar-track {
+    background-color: #0f0c29;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(127.5, 127.5, 127.5);
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(159, 159, 159);
+    transition: all 1s;
 }
 h1 {
     position: absolute;
@@ -16,12 +35,13 @@ h1 {
     margin-top: 15rem;
 }
 .title {
-    background: url("./title.png");
+    /* background: url("./title.png");
     background-size: auto;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0));
     margin-left: -0.5rem;
     margin-right: -0.5rem;
-    height: 40rem;
+    height: 35rem;
     margin-top: -1rem;
 }
 .wrapper {
@@ -34,12 +54,16 @@ h1 {
     width: 60%;
 }
 .p-left, .p-right {
-    backdrop-filter: brightness(150%);
+    backdrop-filter: brightness(125%);
     padding: 1rem;
     border-radius: 25px;
     width: 50%;
     margin: 1rem 3rem 0 3rem;
     font-size: 1.5rem;
+}
+.p-left:last-of-type,
+.p-right:last-of-type {
+    margin-bottom: 10rem;
 }
 .serverstats {
     display: flex;
