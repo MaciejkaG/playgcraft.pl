@@ -12,7 +12,7 @@ function updateStats() {
             var status = '<span class="red">offline</span>'
             if (json.online) {
                 status = '<span class="green">online</span>'
-            }e.log(status)
+            }
             document.getElementById("status").innerHTML = `Status: ${status}`;
             if (json.online) {
                 document.getElementById("players").innerHTML = `Gracze: ${json.players.online}/${json.players.max}`;
