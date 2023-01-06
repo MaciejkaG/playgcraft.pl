@@ -68,7 +68,7 @@ h1 {
 .serverstats * {
     backdrop-filter: brightness(150%);
     padding: 1rem;
-    border-radius: 25px;
+    border-radius: 15px;
     margin: 1rem 3rem 0 3rem;
     font-size: 2rem;
 }
