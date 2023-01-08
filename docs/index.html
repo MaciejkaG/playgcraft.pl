@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/img/g-logo-round.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <meta property="og:title" content="GCraft" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="playgcraft.pl" />
+    <meta property="og:image"
+        content="https://cdn.discordapp.com/attachments/1053035096900378674/1061290495738921051/g-logo.png" />
+    <meta property="og:description" content="Twój ulubiony serwer Minecraft." />
+    <meta name="theme-color" content="#0066ff">
+
+    <style>
+        .header {
+            margin-left: 75px;
+        }
+        .sidebar {
+            background: rgb(34, 34, 34);
+            height:100%;
+            left: 0;
+            bottom: 0;
+            width: 75px;
+            position: fixed;
+            transition: width 0.5s;
+        }
+        .sidebar:hover {
+            width: 300px;
+        }
+        .sidebar:hover .entry {
+            opacity: 1;
+            visibility: none;
+        }
+        .sidebar .entry {
+            cursor: pointer;
+            margin-left: 20px;
+            margin-top: 0.3em;
+            opacity: 0;
+            transition: opacity 0.3s, color 0.2s;
+        }
+        .sidebar .entry:hover {
+            color: rgb(177, 177, 177)
+        }
+        .sidebar .hover-me {
+            white-space: nowrap;
+            position:relative;
+            left: 0;
+            top: 50%;
+            letter-spacing: 1em;
+            transform: rotate(-90deg);
+            transition: all 0.2s;
+        }
+        .sidebar:hover .hover-me {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .md-container {
+            box-shadow: 0 0 20px rgb(0, 102, 255);
+            padding: 10px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: rgb(0, 102, 255);
+            border-radius: 20px;
+            width: auto;
+            margin-left: 125px;
+            margin-right: 50px;
+        }
+    </style>
+
+
+    <title>GCraft - Twój ulubiony serwer Minecraft</title>
+</head>
+
+<body>
+    <iframe id="regulamin" src="../assets/markdown/regulamin.md" style="display: none;"></iframe>
+    <div class="media">
+        <a target="_blank" href="https://www.tiktok.com/@playgcraft"><img src="../assets/img/tt-icon.png" alt=""></a>
+
+        <a target="_blank" href="https://discord.gg/26Xudh3T4n"><img src="../assets/img/dc-icon.png" alt=""></a>
+
+        <a target="_blank" href="https://www.youtube.com/channel/UCcE-3aN4FWAHd6Jp7xy9FfA"><img
+                style="margin-left: 10px;" src="../assets/img/yt-icon.png" alt=""></a>
+
+    </div>
+    <div class="header">
+        <div class="logo">
+            <div class="tooltip">
+                <h1 id="ip"><span onclick="copyIP()">mc.playgcraft.pl</span></h1>
+                <span class="tooltiptext" id="iptooltiptext">Kliknij aby skopiować!</span>
+            </div>
+            <div class="online">
+                <div class="dot" id="onlinedot"></div>
+                <div class="text">
+                    <h2 id="playercount">-</h2>
+                    <h3 id="onlinetext">online</h3>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <a href="../"><h2>Strona główna</h2></a>
+                <h2 class="active">Dokumentacja</h2>
+            <button>Sklep</button> <!-- onclick="location.href='' -->
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="hover-me">
+            <h2>Hover me</h2>
+        </div>
+        <div class="entry">
+            <h2>
+                <span onclick="loadFile('regulamin')">Regulamin</span>
+            </h2>
+        </div>
+    </div>
+    <div class="md-container">
+        <div id="doc-block">
+            <h1><< Wybierz dokument z paska.</h1>
+        </div>
+    </div>
+
+
+        <div class="footer">
+
+        </div>
+
+        <div class="creator">
+            <h2><b>ⓒ</b> 2022 <b>GCraft</b></h2>
+        </div>
+
+        <script src="../assets/js/mdscript.js"></script>
+        <script src="../assets/js/lepszyplayercounter.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/6f2ae87f3d.js" crossorigin="anonymous"></script>
+        <script>
+    $(document).ready(function(){
+    $("a").on('click', function(event) {
+        if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+            window.location.hash = hash;
+        });
+        }
+    });
+    });
+        </script>
+</body>
+
+</html>
