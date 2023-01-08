@@ -16,11 +16,6 @@ function loadFile(fileName) {
     }
     if (fileName=="regulamin") {
         window.history.pushState(null, null, `?doc=${fileName}`);
-        share = {
-            title: 'Dokument GCraft',
-            text: 'Regulamin serwera GCraft',
-            url: window.location.href,
-        }
         document.getElementById(`${fileName}-btn`).style.color = "rgb(0, 102, 255)";
         document.getElementById("doc-name").innerHTML = "Regulamin";
         document.getElementById("doc-block").innerHTML = regulamin;
@@ -30,5 +25,20 @@ function loadFile(fileName) {
 }
 
 const copyDocURL = str => {
-    navigator.share(share)
+    if (navigator.appVersion.indexOf('Win') != -1) {
+        share = {
+            title: 'GCraft',
+            text: 'Dokument serwera GCraft',
+            url: window.location.href,
+        }
+        navigator.share(share)
+    } else {
+        if (window.isSecureContext && navigator.clipboard) {
+            navigator.clipboard.writeText(window.location.href);
+        } else {
+            unsecuredCopyToClipboard(window.location.href);
+        }
+        alert("Skopiowano link do schowka.")
+    }
+    
 };
