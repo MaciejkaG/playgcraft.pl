@@ -30,33 +30,49 @@
             bottom: 0;
             width: 75px;
             position: fixed;
-            transition: width 0.5s;
+            transition: width 0.2s;
         }
         .sidebar:hover {
             width: 300px;
         }
+        .sidebar h1 {
+            user-select: none;
+            width: fit-content;
+            margin-left: 20px;
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+        .sidebar:hover h1 {
+            opacity: 0.5;
+        }
         .sidebar:hover .entry {
+            width: fit-content;
             opacity: 1;
-            visibility: none;
+            visibility: visible;
+            display: block;
         }
         .sidebar .entry {
             cursor: pointer;
             margin-left: 20px;
             margin-top: 0.3em;
             opacity: 0;
-            transition: opacity 0.3s, color 0.2s;
+            visibility: none;
+            display: none;
+            transition: opacity 0.3s, color 0.2s, visibility 0.3s;
         }
         .sidebar .entry:hover {
             color: rgb(177, 177, 177)
         }
         .sidebar .hover-me {
+            user-select: none;
             white-space: nowrap;
             position:relative;
             left: 0;
             top: 50%;
-            letter-spacing: 1em;
+            letter-spacing: 0.6em;
             transform: rotate(-90deg);
             transition: all 0.2s;
+            text-transform: uppercase;
         }
         .sidebar:hover .hover-me {
             opacity: 0;
@@ -64,7 +80,6 @@
         }
         .md-container {
             box-shadow: 0 0 20px rgb(0, 102, 255);
-            padding: 10px;
             border-style: solid;
             border-width: 2px;
             border-color: rgb(0, 102, 255);
@@ -72,6 +87,11 @@
             width: auto;
             margin-left: 125px;
             margin-right: 50px;
+            padding: 30px;
+        }
+        #doc-name {
+            text-align: center;
+            margin-left: 75px;
         }
     </style>
 
@@ -114,18 +134,19 @@
         <div class="hover-me">
             <h2>Hover me</h2>
         </div>
+        <h1>Dokumenty:</h1>
         <div class="entry">
             <h2>
-                <span onclick="loadFile('regulamin')">Regulamin</span>
+                <span onclick="loadFile('regulamin')" id="regulamin-btn">Regulamin</span>
             </h2>
         </div>
     </div>
+    <h1 id="doc-name"></h1>
     <div class="md-container">
         <div id="doc-block">
             <h1><< Wybierz dokument z paska.</h1>
         </div>
     </div>
-
 
         <div class="footer">
 
