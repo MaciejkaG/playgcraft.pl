@@ -15,12 +15,12 @@ function loadFile(fileName) {
         document.getElementById(`${previousFileName}-btn`).style.color = "rgb(255, 255, 255)";
     }
     if (fileName=="regulamin") {
+        window.history.pushState(null, null, `?doc=${fileName}`);
         share = {
             title: 'Dokument GCraft',
             text: 'Regulamin serwera GCraft',
             url: window.location.href,
         }
-        window.history.pushState(null, null, `?doc=${fileName}`);
         document.getElementById(`${fileName}-btn`).style.color = "rgb(0, 102, 255)";
         document.getElementById("doc-name").innerHTML = "Regulamin";
         document.getElementById("doc-block").innerHTML = regulamin;
