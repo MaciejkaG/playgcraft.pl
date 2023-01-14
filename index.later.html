@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nowy serwer Minecraft gildie survival i Kit PvP z zaawansowanym anti-cheatem i miłą społecznością.">
+    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
@@ -24,15 +24,12 @@
     <title>GCraft - Twój ulubiony serwer Minecraft</title>
 </head>
 <body>
-    <div id="editor">
-
-
     <div class="media">
-        <a target="_blank" href="./tt"><img src="assets/img/tt-icon.png" alt="TikTok"></a>
+        <a target="_blank" href="./tt"><img src="assets/img/tt-icon.png" alt=""></a>
 
-        <a  target="_blank" href="./dc"><img src="assets/img/dc-icon.png" alt="Discord"></a>
+        <a  target="_blank" href="./dc"><img src="assets/img/dc-icon.png" alt=""></a>
 
-        <a target="_blank" href="./yt"><img style="margin-left: 10px;"src="assets/img/yt-icon.png" alt="YouTube"></a>
+        <a target="_blank" href="./yt"><img style="margin-left: 10px;"src="assets/img/yt-icon.png" alt=""></a>
 
     </div>
     <div class="bg"></div>
@@ -93,7 +90,7 @@
         <div class="content">
             <div class="tryb">
                 <div class="title">
-                    <img src="./assets/img/EnchantedGoldenApple.gif" alt="Enchanted Golden Apple">
+                    <img src="./assets/img/EnchantedGoldenApple.gif" alt="">
                     <h1>Gildie</h1>
                 </div>
                 <h2>Dobierz się ze znajomymi w gildię, aby potem walczyć z innymi gildiami!
@@ -104,7 +101,7 @@
             </div>
             <div class="tryb">
                 <div class="title">
-                    <img src="./assets/img/DiamondSword.gif" alt="Diamond Sword">
+                    <img src="./assets/img/DiamondSword.gif" alt="">
                     <h1>Kit FFA</h1>
                 </div>
                 <h2>Wejdź na arenę, wybierz zestaw przedmiotów i walcz!
@@ -125,7 +122,7 @@
             <div class="adm">
                 
                 <div class="left">
-                    <img src="http://mc-heads.net/head/MaciejkaG" alt="MaciejkaG">
+                    <img src="http://mc-heads.net/head/MaciejkaG" alt="">
                 </div>
 
                 <div class="right">
@@ -139,7 +136,7 @@
             <div class="adm">
                 
                 <div class="left">
-                    <img src="http://mc-heads.net/head/packetlogged" alt="packetlogged">
+                    <img src="http://mc-heads.net/head/packetlogged" alt="">
                 </div>
 
                 <div class="right">
@@ -160,9 +157,23 @@
         <h2><b>ⓒ</b> 2022 <b>GCraft</b></h2>
     </div>
 
-
-    </div>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/lepszyplayercounter.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/6f2ae87f3d.js" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function(){
+    $("a").on('click', function(event) {
+        if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+            window.location.hash = hash;
+        });
+        }
+    });
+    });
+    </script>
 </body>
 </html>

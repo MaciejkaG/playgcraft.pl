@@ -454,3 +454,6 @@ b{
     opacity: 1;
     transition: opacity 0.2s;
 }
+::selection {
+    background: rgba(53, 154, 255, 0.5);
+}

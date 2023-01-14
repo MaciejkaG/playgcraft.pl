@@ -99,6 +99,12 @@
             position: absolute;
             left: auto;
             right: 100px;
+            border: solid rgb(0, 102, 255) 1px;
+            border-radius: 10px;
+            padding: 3px;
+        }
+        .share-button a {
+            color: rgb(0, 102, 255);
         }
         .creator {
             background: linear-gradient(to top, #0a0a0a, #050505)
@@ -112,12 +118,12 @@
 
 <body>
     <div class="media">
-        <a target="_blank" href="../tt"><img src="../assets/img/tt-icon.png" alt=""></a>
+        <a target="_blank" href="../tt"><img src="../assets/img/tt-icon.png" alt="TikTok"></a>
 
-        <a target="_blank" href="../dc"><img src="../assets/img/dc-icon.png" alt=""></a>
+        <a target="_blank" href="../dc"><img src="../assets/img/dc-icon.png" alt="Discord"></a>
 
         <a target="_blank" href="../yt"><img
-                style="margin-left: 10px;" src="../assets/img/yt-icon.png" alt=""></a>
+                style="margin-left: 10px;" src="../assets/img/yt-icon.png" alt="YouTube"></a>
 
     </div>
     <div class="header">
@@ -150,6 +156,11 @@
                 <span onclick="loadFile('regulamin')" id="regulamin-btn">Regulamin</span>
             </h2>
         </div>
+        <div class="entry">
+            <h2>
+                <span onclick="loadFile('basicTutorial')" id="basicTutorial-btn">Podstawowy Tutorial</span>
+            </h2>
+        </div>
     </div>
     <div class="docs-container">
         <h2 class="share-button"><a href="javascript:copyDocURL()">Udostępnij</a></h2>
@@ -169,25 +180,9 @@
             <h2><b>ⓒ</b> 2022 <b>GCraft</b></h2>
         </div>
 
-        <script src="../assets/js/lepszyplayercounter.js"></script>
+        <script src="../assets/js/script.js"></script>
         <script src="../assets/js/mdscript.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://kit.fontawesome.com/6f2ae87f3d.js" crossorigin="anonymous"></script>
-        <script>
-    $(document).ready(function(){
-    $("a").on('click', function(event) {
-        if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 800, function(){
-            window.location.hash = hash;
-        });
-        }
-    });
-    });
-        </script>
 </body>
 
 </html>

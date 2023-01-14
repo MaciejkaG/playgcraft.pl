@@ -74,6 +74,17 @@
     .section .title .line {
         display: none;
     }
+    .section .title .linered {
+        display: none;
+    }
+    .section .content {
+        font-size: 0.75em;
+    }
+    .section .content h2 {
+        max-width: 80vw;
+    }
+
+    
 
     .docs-container {
         margin-top: 100px;

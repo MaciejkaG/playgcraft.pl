@@ -1,3 +1,4 @@
+// SERVER STATUS CHECKER
 const ip = "mc.playgcraft.pl"
 document.getElementById("onlinedot").style.animation = "";
 document.getElementById("onlinedot").style.background = "rgb(255, 73, 73)";
@@ -55,3 +56,19 @@ const copyIP = str => {
         document.getElementById("iptooltiptext").innerHTML = "Kliknij aby skopiować!";
     }, 2000);
 };
+
+
+// ANIMATION SCRIPT
+$(document).ready(function () {
+    $("a").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+});
