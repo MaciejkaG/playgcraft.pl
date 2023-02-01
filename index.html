@@ -55,7 +55,7 @@
             <a href="docs">
                 <h2>Dokumentacja</h2>
             </a>
-            <button>Sklep</button> <!-- onclick="location.href='' -->
+            <button onclick="location.href='./sklep'">Sklep</button>
         </div>
     </div>
 
@@ -91,6 +91,17 @@
         <div class="content">
             <div class="tryb">
                 <div class="title">
+                    <img src="./assets/img/EnchantedElytra.webp" alt="Enchanted Elytra">
+                    <h1>Elytra PvP</h1>
+                </div>
+                <h2>Lataj na elytrze, kop, handluj oraz walcz z innymi o zasoby!
+                    <br>Nasze elytra PvP posiada dużo setów i sprawny system kopalni!
+                </h2>
+            </div>
+        </div>
+        <div class="content">
+            <div class="tryb">
+                <div class="title">
                     <img src="./assets/img/EnchantedGoldenApple.gif" alt="Enchanted Golden Apple">
                     <h1>Gildie</h1>
                 </div>
@@ -102,7 +113,7 @@
             </div>
             <div class="tryb">
                 <div class="title">
-                    <img src="./assets/img/DiamondSword.gif" alt="Diamond Sword">
+                    <img src="./assets/img/DiamondSword.gif" alt="Enchanted Diamond Sword">
                     <h1>Kit FFA</h1>
                 </div>
                 <h2>Wejdź na arenę, wybierz zestaw przedmiotów i walcz!
@@ -146,7 +157,20 @@
                 </div>
 
             </div>
-
+        </div>
+        <div class="content">
+            <div class="adm">
+            
+                <div class="left">
+                    <img src="https://mc-heads.net/head/Polmis" alt="packetlogged">
+                </div>
+            
+                <div class="right">
+                    <h1>Polmis</h1>
+                    <h2>Owner</h2>
+                </div>
+            
+            </div>
         </div>
     </div>
     
@@ -155,12 +179,27 @@
     </div>
 
     <div class="creator">
-        <h2><b>ⓒ</b> 2022 <b>GCraft</b></h2>
+        <h2><b>ⓒ</b> 2023 <b>GCraft</b></h2>
     </div>
 
 
     </div>
     <script src="assets/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+                $("a").on('click', function (event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function () {
+                            window.location.hash = hash;
+                        });
+                    }
+                });
+            });
+    </script>
 </body>
 </html>

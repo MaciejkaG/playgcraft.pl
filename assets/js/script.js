@@ -9,14 +9,18 @@ updateStats();
 setInterval(updateStats, 1000);
 
 function updateStats() {
-    fetchWithTimeout(`https://minecraft-status.onrender.com/status?ip=${ip}`, { timeout: 1000 })
+    fetchWithTimeout(`https://mcapi.us/server/status?ip=${ip}&port=25726`, { timeout: 1000 })
         .then(response => response.json())
         .then((json) => {
-            document.getElementById("onlinedot").style = "animation: dot 2s infinite;";
-            document.getElementById("onlinedot").style.background = "rgb(0, 102, 255)";
-            document.getElementById("onlinetext").innerHTML = "online";
-            document.getElementById("onlinetext").style.color = "rgb(0, 102, 255)";
-            document.getElementById("playercount").innerHTML = `${json.players.online}`;
+            if (json.status === "error" || json.online === false) {
+                serverIsOffline()
+            } else {
+                document.getElementById("onlinedot").style = "animation: dot 2s infinite;";
+                document.getElementById("onlinedot").style.background = "rgb(0, 102, 255)";
+                document.getElementById("onlinetext").innerHTML = "online";
+                document.getElementById("onlinetext").style.color = "rgb(0, 102, 255)";
+                document.getElementById("playercount").innerHTML = `${json.players.now}`;
+            }
         })
 }
 function serverIsOffline() {
@@ -56,19 +60,3 @@ const copyIP = str => {
         document.getElementById("iptooltiptext").innerHTML = "Kliknij aby skopiować!";
     }, 2000);
 };
-
-
-// ANIMATION SCRIPT
-$(document).ready(function () {
-    $("a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function () {
-                window.location.hash = hash;
-            });
-        }
-    });
-});
