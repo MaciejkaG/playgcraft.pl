@@ -15,6 +15,25 @@
         font-size: 16px;
     }
 
+    .serverStart {
+        margin: auto;
+    }
+    
+    .serverStartContainer {
+        align-items: center;
+    }
+        
+    .serverStart h1 {
+        font-size: 140px;
+    }
+        
+    .serverStart .timeHolder {
+        width: 750px;
+    }
+        
+    .serverStart h2 {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -100,6 +119,21 @@
 
     .media img {
         width: 20px;
+    }
+    .serverStart .timeHolder {
+        width: 98vw;
+    }
+    
+    .serverStart {
+        text-align: center;
+    }
+    
+    .serverStart h1 {
+        font-size: 17vw;
+    }
+    
+    .serverStart h2 {
+        font-size: 3vw;
     }
 }
 

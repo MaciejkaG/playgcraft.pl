@@ -8,6 +8,22 @@ document.getElementById("playercount").innerHTML = `-`;
 updateStats();
 setInterval(updateStats, 1000);
 
+var countDownDate = 1675530000000
+setInterval(() => {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("startTimer").innerHTML = days + ":" + hours + ":"
+        + minutes + ":" + seconds;
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("serverStartContainer").style.display = "none";
+    }
+}, 1000);
+
 function updateStats() {
     fetchWithTimeout(`https://mcapi.us/server/status?ip=${ip}&port=25726`, { timeout: 1000 })
         .then(response => response.json())

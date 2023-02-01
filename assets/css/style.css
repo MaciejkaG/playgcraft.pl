@@ -457,3 +457,25 @@ b{
 ::selection {
     background: rgba(53, 154, 255, 0.5);
 }
+
+/* server start */
+.serverStartContainer {
+    display: flex;
+}
+
+.serverStart {
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.serverStart .timeHolder {
+    width: 1000px;
+}
+
+.serverStart h1 {
+    white-space: overline;
+    font-size: 200px;
+    font-weight: 600;
+    margin: 0;
+    color: rgb(0, 102, 255);
+}
