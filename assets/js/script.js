@@ -8,6 +8,7 @@ document.getElementById("playercount").innerHTML = `-`;
 updateStats();
 setInterval(updateStats, 1000);
 
+// COUNTDOWN
 var countDownDate = 1675530000000
 setInterval(() => {
     var now = new Date().getTime();
@@ -23,6 +24,18 @@ setInterval(() => {
         document.getElementById("serverStartContainer").style.display = "none";
     }
 }, 1000);
+
+// LOADER
+document.onreadystatechange = function () {
+    document.getElementById("loader").style.transition = "all 0.5s";
+    if (document.readyState !== "complete") {
+        document.getElementById("loader").style.opacity = 1
+        document.getElementById("loader").style.visibility = "visible";
+    } else {
+        document.getElementById("loader").style.opacity = 0
+        document.getElementById("loader").style.visibility = "hidden";
+    }
+};
 
 function updateStats() {
     fetchWithTimeout(`https://mcapi.us/server/status?ip=${ip}&port=25726`, { timeout: 1000 })

@@ -479,3 +479,47 @@ b{
     margin: 0;
     color: rgb(0, 102, 255);
 }
+.loader-container {
+    z-index: 2;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-family: monospace;
+}
+
+.loader-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 200px;
+    animation: loaderAnimation 1.5s infinite;
+}
+
+@keyframes loaderAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(-20deg);
+    }
+
+    80% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
